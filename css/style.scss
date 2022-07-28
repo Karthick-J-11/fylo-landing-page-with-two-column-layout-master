@@ -1,0 +1,995 @@
+
+//colors
+
+//primary
+
+$Very-Dark-Blue: hsl(243, 87%, 12%);
+$Desaturated-Blue: hsl(238, 22%, 44%);
+
+// Accent
+
+$Bright-Blue: hsl(224, 93%, 58%);
+$Moderate-Cyan: hsl(170, 45%, 43%);
+
+// Neutral
+
+$Light-Grayish-Blue: hsl(240, 75%, 98%);
+$Light-Gray: hsl(0, 0%, 75%);
+
+// Font Family
+
+$Headings: 'Open Sans', sans-serif;
+$body:'Raleway', sans-serif;
+
+
+// breking point
+
+@mixin for-desktop {
+    @media (min-width: 930px)
+    {@content;}
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto; 
+
+    .container {
+        max-width: 23.438em;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        margin: 0 auto;
+
+        @include for-desktop {
+            max-width: 90em;
+              
+        }
+
+    
+        header {
+            width: 23.438em;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: repeat(2, auto);
+            grid-row-gap: 3.25em;
+            padding-top: 3em;
+            padding-bottom: 4em;
+
+            @include for-desktop {
+                width: 90em;
+                grid-column: 1;
+                grid-row:1;
+                grid-template-columns: 3.12em 1fr 3.12em;  
+                padding-bottom: 8em;
+                grid-row-gap: 0.25em;
+                
+            }
+            
+    
+            nav {
+                width: 22.188em;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center; 
+                justify-items: center;
+                grid-row: 1;
+
+                @include for-desktop {
+                    width: 100%;
+                    grid-column: 2;
+                    grid-template-columns: 3fr 1fr;
+
+                }
+    
+                .logo {
+                    width: 100%;
+
+                   img {
+                    width: 7em;
+
+                    @include for-desktop {
+                       width: 10em;
+                    }
+                   }
+                }
+                .menu {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    gap: 0.6em;
+
+                    @include for-desktop {
+                        gap: 2em;
+                      }
+
+                    a {
+                        color: $Very-Dark-Blue;
+                        font-family: $Headings;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+
+                        @include for-desktop {
+                            justify-self: end;
+                          }
+                    }
+                }
+            }
+    
+            .hero {
+                width: 22.188em;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, 1fr);
+                gap: 2.25em;
+                align-items: center; 
+                justify-items: center;
+                text-align: center;
+
+                @include for-desktop {
+                    width: 100%;
+                    grid-column: 2;
+                    grid-row: 2;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: repeat(5, auto);                    
+                    text-align: left;
+                    justify-items: start;
+                    gap: 0em;
+                    
+                   
+                    
+                }
+    
+                .hero-img {
+                    width: 100%;
+
+                    @include for-desktop {
+                        grid-column: 2;
+                        grid-row: 1 / 5;
+                        padding-top: 3em;
+                       
+                    }
+    
+                    img {
+                        width: 20em;
+
+                        @include for-desktop {
+                          width: 100%;
+                            
+                        }
+                    }
+                }
+
+                .hero-left {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: repeat(3, auto);
+                    grid-gap: 2.2em;
+
+                    @include for-desktop {
+                        grid-column: 1;
+                        grid-row: 2 / 4;
+                        grid-gap: 1em;
+                    }
+
+                    .hero-title {
+                        width: 22.188em;
+
+                        @include for-desktop {
+                            width: 40em;
+                        }
+    
+                        h1 {
+                            color: $Very-Dark-Blue;
+                            font-size: 1.6rem;
+                            font-family: $body;
+                            line-height: 1.5;
+
+                            @include for-desktop {
+                                font-size: 2.4rem;
+                              }
+                         }
+                    }
+    
+                    .hero-text {
+                        width: 22.188em;
+                        justify-self: center;
+
+
+                        @include for-desktop {
+                            width: 35em;
+                            justify-self: start;
+                          }
+
+                          p {
+                            font-size: 1em;
+                            font-family: $Headings;
+                            line-height: 1.4;
+                            color: $Very-Dark-Blue;
+                            font-weight: 600;
+                            line-height: 1.6;
+                        
+
+                            @include for-desktop {
+                                font-size: 1.1em;
+                                font-weight: 600;
+                                line-height: 1.5;
+                              }
+                          }
+                    }
+    
+                    .hero-input {
+                        width: 22.188em;
+
+                        @include for-desktop {
+                            width: 32em;
+                           }
+                        
+                        form {
+                            display: grid;
+                            grid-template-columns: auto;
+                            grid-template-rows: auto auto;
+                            gap: 0.5em;
+                            align-items: center; 
+                            justify-items: center; 
+                            
+                            @include for-desktop {
+                               grid-template-columns: auto auto;
+                               justify-items: start;
+                               gap: .4em;
+                              }
+                        
+    
+                            input {
+                                width: 25em;
+                                padding: 1em;
+                                border: .06rem solid $Desaturated-Blue;
+                                border-radius: 0.3rem; 
+                                background-color: hsl(0, 0%, 100%);
+
+                                @include for-desktop {
+                                    grid-column: 1;
+                                    grid-row: 1;
+                                    width: 22em;
+                                   }
+                            }
+    
+                            .err { 
+                                border: 1px solid hsl(0, 76%, 56%); 
+                            }
+                                .emsg { 
+                                    color: hsl(0, 76%, 56%); 
+                                    font-size: 0.8rem;
+                                }
+    
+                            ::placeholder {
+                                color: $Light-Gray;
+                            }
+    
+                            button {
+                                width: 25em;
+                                padding: 1em;
+                                border: none;
+                                background-color: $Bright-Blue;
+                                border-radius: 0.3rem; 
+                                color: hsl(240, 75%, 98%);
+                                font-family: $Headings;
+                                font-weight: 700;
+
+                                @include for-desktop {
+                                    grid-column: 2;
+                                    grid-row: 1;
+                                    width: 17em;
+                                    padding: 1.1em;
+                                   }
+                            }
+    
+                            button:hover {
+                                opacity: 0.6;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    
+        main {
+            width: 23.438em;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+            background-image: url('/images/bg-curve-mobile.svg');
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: contain;
+            padding-top:50px;
+
+            @include for-desktop {
+                width: 90em;
+                grid-column: 1;
+                grid-row: 2;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto;
+                padding-top: 6.25em;
+                background-image: url('/images/bg-curve-desktop.svg');
+                
+            }
+            
+            
+            .content {
+                width: 23.438em;
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: repeat(3, auto);
+                gap: 2.25em;
+                justify-items: center;
+                background-color: #F8F8FE;
+                padding-bottom: 1.5em;
+
+                @include for-desktop {
+                    width: 100%;
+                  grid-template-columns: 3.12em 1fr 1fr 3.12em;
+                  grid-template-rows: auto auto;
+                  gap: .1em;
+               
+                }
+
+                .content-img {
+                    width: 20.188em;
+                    padding-bottom: 2em;
+                    padding-top: 3em;
+                    grid-column: 1;
+                    grid-row: 1;
+
+                    @include for-desktop {
+                        width: 100%;
+                        grid-column: 3;
+                        grid-row: 1 / 4;  
+                      }
+
+                    img {
+                        width: 100%;
+
+                        @include for-desktop {
+                            width: 100%;
+                           
+                               
+                           }
+                    }
+                }
+
+                .content-left {
+                    width: 23.438em;
+                    display: grid;
+                    justify-items: center;
+                    align-items: center;
+                    gap: 2em;
+                    grid-column: 1;
+                    grid-row: 2;
+                    padding-top: 2em;
+
+                    @include for-desktop {
+                        width: 100%;
+                        justify-items: start;
+                        align-items: start;
+                        grid-column: 2;
+                        grid-row: 1;
+                       
+                      }
+
+
+                    .content-title {
+                        width: 20em;
+                        justify-self: center;
+                        text-align: center;
+                        
+                        @include for-desktop {
+                            width: 100%;
+                            text-align: left;
+                        }
+            
+    
+                        h2 {
+                            font-size: 1rem;
+                            font-family: $Headings;
+                            font-weight: 700;
+
+                            @include for-desktop {
+                               font-size: 2em;
+                            }
+                        }
+                    }
+    
+                    .content-text {
+                        width: 20em;
+                        display: grid;
+                        gap: 1.25rem;
+
+                        @include for-desktop {
+                            width: 28em;
+                         }
+                        
+    
+                        p {
+                            color: $Desaturated-Blue;
+                            text-align: left;
+                            font-family: $body;
+                            font-size: 0.9em;
+                            font-weight: 400;
+                            line-height: 1.6;
+                           
+                        }
+    
+                    }
+    
+                    .content-link {
+                        width: 23.438em;
+                        display: grid;
+                        grid-template-columns: auto auto;
+                        grid-template-rows: auto auto;
+                        grid-column-gap: 0.62rem;
+                        grid-row-gap: 0.30rem;
+                       
+                        @include for-desktop {
+                           width: 100%;
+                           grid-template-columns: 165px auto;
+                           
+                          }
+                        
+    
+                        a {
+                            color: $Moderate-Cyan;
+                            justify-self: end;
+                            font-family: $Headings;
+                            font-size: 0.9rem;
+
+                            @include for-desktop {
+                                width: 100%;
+                                font-size: 1.1rem;
+                               }
+    
+                        }
+    
+                        img {
+                            width: 1.25rem;
+                            justify-self: start;
+
+                            @include for-desktop {
+                                width: 1.6rem;
+                                
+                               }
+                        }
+    
+                        span {
+                            width: 170px;
+                           border: 0.001rem solid $Moderate-Cyan;
+                           grid-column: 1 / 3;
+                           grid-row: 2;
+                           justify-self: center;
+                           opacity: 0.7;
+
+                           @include for-desktop {
+                            justify-self: start;
+                            width: 200px;
+                                
+                        }
+    
+                        }
+                    }
+    
+                    .content-link:hover {
+                        opacity: 0.6;
+                    }
+                }
+                
+                .card-container {
+                    width: 23.438em;
+                    display: grid;
+                    grid-template-columns: auto;
+                    align-items: center; 
+                    justify-items: center;
+                    background-color: #F8F8FE;
+                    padding: 1.6em 0 5em 0;
+                    grid-column: 1;
+                    grid-row: 3;
+                   
+
+                    @include for-desktop {
+                        width: 100%;
+                        grid-column: 2;
+                        grid-row: 2;
+                        justify-items: start;
+                    }
+        
+                
+    
+                    .card {
+                        width: 18em;
+                        display: grid;
+                        grid-template-columns: auto auto;
+                        grid-template-rows: auto auto auto;
+                        grid-row-gap: 0.2rem;
+                        padding: 20px;
+                        background-color: hsl(0, 0%, 100%);
+                        box-shadow: 0rem 0rem 0.05rem 0.05rem hsl(240, 2%, 84%);
+                        border: 1px solid hsl(240, 75%, 98%);
+                        border-radius: 10px;
+
+                        @include for-desktop {
+                            width: 22em;
+                            padding: 1.25em;
+                            
+                        }
+            
+    
+                        .quotation {
+                            width: 1em;
+                            grid-column: 1 / 3;
+                            grid-row: 1;
+
+                            img {
+                               width: 0.8em;
+
+                               @include for-desktop {
+                                width: 1em;
+                            }
+                
+                            }
+                        }
+    
+                        .card-text {
+                            grid-column: 1 / 3;
+                            grid-row: 2;
+    
+                            p {
+                                font-family: $Headings;
+                                font-weight: 700;
+                                font-size: 11px;
+                                line-height: 1.6;
+                                
+                                @include for-desktop {
+                                    font-size: 0.899em;
+                                }
+                            }
+                        }
+    
+                        .card-profle {
+                            grid-column: 1 / 3;
+                            grid-row: 3;
+                            display: grid;
+                            grid-template-columns: 2em auto;
+                            padding-top: 10px;
+                            align-items: center; 
+                            justify-items: center;
+
+                            @include for-desktop {
+                                gap: 1.5em;
+                            }
+    
+                            .testimonial-avatar {
+                                grid-column: 1;
+                                justify-self: start;
+    
+                                img {
+                                    width: 1.6em;
+                                    border-radius: 3.12em;
+
+                                    @include for-desktop {
+                                        width: 2.5em;
+                                    }
+                                }
+                            }
+    
+                            .testimonial-name {
+                                grid-column: 2;
+                                justify-self: start;
+    
+                                p {
+                                    font-family: $Headings;
+                                    font-weight: 700;
+                                    color: $Very-Dark-Blue;
+                                    font-size: 0.7rem;
+                                    line-height: 1.1;
+
+                                    @include for-desktop {
+                                        font-size: 1em;
+                                    }
+                                }
+    
+                                span {
+                                    font-family: $Headings;
+                                    font-weight: 700;
+                                    font-size: 0.4rem;
+
+                                    @include for-desktop {
+                                        font-size: 0.6rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }  
+            }
+
+            
+            .access {
+                width: 23.438em;
+                background-color: $Desaturated-Blue;
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: repeat(3, auto);
+                justify-items: center;
+                color: hsl(240, 75%, 98%);
+                gap: 1.6em;
+                padding: 4em 0 4em 0;
+
+                @include for-desktop {
+                    width: 100%;
+                    grid-row: 2;
+                    grid-template-columns: 3.12em 1fr 1fr 3.12em;
+                    grid-template-rows: auto;
+                    padding: 5em 0 5em 0;
+                    gap: .1em;
+                }
+    
+                .access-left {
+                    width: 23.438em;
+                    display: grid;
+                    justify-items: center;
+                    gap: 1em;
+
+                    @include for-desktop {
+                        width: 100%;
+                        grid-column: 2;
+                        justify-items: start;
+                       
+                    }
+                    .access-title {
+                    
+                        
+                        h2 {
+                            font-size: 1.1rem;
+                            font-family: $Headings;
+                            font-weight: 700;
+    
+                            @include for-desktop {
+                               font-size: 1.9em;
+                            }
+                        }
+                    }
+    
+                    .access-text {
+                        width: 18.1em;
+
+                        @include for-desktop {
+                            width: 31em;
+                            
+                        }
+    
+                        p {
+                            font-size: 0.960rem;
+                            text-align: center;
+                            font-family: $body;
+                            line-height: 1.5;
+    
+                            @include for-desktop {
+                                font-size: 1em;
+                                text-align: left;
+                            }
+        
+                        }
+                    }
+                }
+                
+
+                .access-input {
+                    width: 23.438em;
+                    display: grid;
+                    justify-items: center;
+
+                    @include for-desktop {
+                        width: 100%;
+                        grid-column: 3;
+                        justify-items: center;
+                        align-items: center;
+                    }
+                    
+
+                    form {        
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-template-rows: auto auto;
+                        gap: 0.3em;
+                        justify-self: center;
+
+                        @include for-desktop {
+                            justify-self: end;
+                           
+                        }
+                        
+
+                        input {
+                            width: 17em;
+                            padding: .8em;
+                            border:  .06em solid $Desaturated-Blue;
+                            background-color: hsl(0, 0%, 100%);
+
+                            @include for-desktop {
+                                width: 30em;
+                                padding: .8em;
+                            }
+                        }
+
+                        .err { 
+                            border: 1px solid hsl(0, 76%, 56%); 
+                        }
+                        .emsg { 
+                                color: hsl(0, 0%, 100%); 
+                                font-size: 0.8rem;
+                                justify-self: center;
+
+                                @include for-desktop {
+                                    justify-self: start;
+                                }
+                         }
+
+                        }
+
+                        ::placeholder {
+                            color: $Light-Gray;
+                            
+                        }
+
+                        button {
+                            width: 17em;
+                            padding: 0.8em;
+                            border: none;
+                            background-color: $Bright-Blue;
+                            color: hsl(240, 75%, 98%);
+                            font-family: $body;
+
+                            @include for-desktop {
+                                width: 14em;
+                                padding: 0.8em;
+                            }
+                               
+                        }
+
+                        button:hover {
+                            opacity: 0.6;
+                            cursor: pointer;
+                        }
+                    }
+                        
+ 
+                }
+            }
+
+            footer {
+                width: 23.438em;
+                background-color: $Very-Dark-Blue;
+                padding: 3em 3.12em 1.9em 3.12em;
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: repeat(6, auto);
+                color: hsl(240, 75%, 98%);
+                gap: 1em;
+                font-family: $body;
+                
+                @include for-desktop {
+                    width: 90em;
+                    grid-column: 1;
+                    grid-row: 3;
+                    gap: .01em;
+                    grid-template-columns: repeat(3, auto);
+                    grid-template-rows: repeat(3, auto);
+                
+                }
+        
+                .footer-logo {
+                    width: 100%;
+                    grid-row: 1;
+                    padding-bottom: 1.9em;
+
+                    @include for-desktop {
+                     grid-column: 1;
+                    }
+        
+        
+                    img {
+                        width: 180px;
+                    }
+                }
+
+                .phone-email {
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: 20px 20px;
+                    gap: 1em;
+
+                    @include for-desktop {
+                        grid-column: 1;
+                        grid-row: 2;
+                        
+                     }
+                    .phone {
+                        width: 100%;
+                        grid-row: 2;
+                        display: grid;
+                        grid-template-columns: 1.3em auto;
+                        gap: 1.3em;
+
+                        @include for-desktop {
+                            grid-column: 1;
+                            grid-row: 1;
+                        }
+
+                        img {
+                            width: 1em;
+                        }
+
+                        p {
+                            font-family: $Headings;
+                        }
+                    }
+            
+                    .email {
+                        width: 100%;
+                        grid-row: 3;
+                        display: grid;
+                        grid-template-columns: 1.3em auto;
+                        gap: 1.3em;
+    
+                         @include for-desktop {
+                            grid-column: 1;
+                            grid-row: 2;
+                        }
+                    
+                        img {
+                            width: 1em;
+                        }
+
+                        p {
+                            font-family: $Headings;
+                        }
+                    }
+            
+                }
+        
+               
+                .footer-links {
+                    grid-row: 4 / 5;
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows: auto auto;
+                    gap: 2.6em;
+                    padding: 3em 0 3em 0;
+
+                    @include for-desktop {
+                        padding: .001em;
+                        grid-column: 2;
+                       grid-row: 2;
+                       grid-template-columns: auto auto;
+                       grid-template-rows: auto;
+                       gap: 5.1em;
+                       justify-items: center;
+                    } 
+                    
+                    .footer-links-one {
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-template-rows: repeat(4, auto);
+                        gap: 1.3em;
+
+                        @include for-desktop {
+                            gap: 1em;
+                        }
+        
+                        a {
+                            color: hsl(240, 75%, 98%);
+                        }
+        
+                        :hover {
+                            color: $Bright-Blue;
+                        }
+                    }
+        
+                    .footer-links-two {
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-template-rows: repeat(3, auto);
+                        gap: 1.3em;
+                       
+                        @include for-desktop {
+                            gap: .1em;
+                        }
+        
+                        a {
+                            color: hsl(240, 75%, 98%);
+                        }
+        
+                        :hover {
+                            color: $Bright-Blue;
+                        }
+                    }
+        
+                    
+                }
+                
+        
+                .social {
+                    grid-row: 5;
+                    display: grid;
+                    grid-template-columns: repeat(3, 3em);
+                    justify-self: center;
+                    font-size: 1.1em;
+                    text-align: center;
+
+                    @include for-desktop {
+                        grid-column: 3;
+                        grid-row: 2
+                    }
+                    a {
+                        width: 2em;
+                        height: 2em;
+                        line-height: 2em !important;
+                        text-align: center;
+                        color: hsl(0, 0%, 100%);
+                        border: 0.01em solid hsl(0, 0%, 100%);
+                        border-radius: 50px;
+        
+                        
+                    } 
+                    :hover {
+                        color: $Bright-Blue; 
+                        border: 0.001em solid $Bright-Blue;
+                        line-height: 2em !important;
+                        border-radius: 50px;
+                        width: 2em;
+                        height: 2em;
+                       
+                    } 
+                }
+        
+                .attribution-div {
+                    grid-row: 6;
+
+                    @include for-desktop {
+                        grid-column: 1 / 4;
+                        grid-row: 3;
+                        padding-top: 3.12em;
+                        justify-items: center;
+                    }
+        
+                    .attribution { 
+                        font-size: 0.688em; 
+                        text-align: center; 
+        
+                        a { 
+                            color: hsl(228, 45%, 44%); 
+                        }
+                    }
+                    
+                }
+        }
+     }   
+}
+
+
+
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://kit.fontawesome.com/040922871c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="/images/logo.svg" alt="logo">
+        </div>
+        <div class="menu">
+          <a href="#">Features</a>
+          <a href="#">Team</a>
+          <a href="#">Sign In</a>
+        </div>
+      </nav>
+      <div class="hero">
+        <div class="hero-img">
+          <img src="/images/illustration-1.svg" alt="illustration one">
+        </div>
+        <div class="hero-left">
+          <div class="hero-title">
+            <h1>All your files in one secure location, accessible anywhere.
+            </h1>
+          </div>
+          <div class="hero-text">
+            <p>
+              Fylo stores your most important files in one secure location. 
+              Access them wherever you need, share and collaborate with friends, 
+              family, and co-workers.
+            </p>
+          </div>
+          <div class="hero-input">
+            <form onsubmit="return check()" novalidate>
+              <input type="email" id="email" name="email" placeholder="Enter your email...">
+              <span id="cname" class="emsg"></span>
+              <button name="submit" type="submit" value="Get-Started">Get Started</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="content">
+          <div class="content-img">
+            <img src="/images/illustration-2.svg" alt="illustration two">
+          </div>
+          <div class="content-left">
+            <div class="content-title">
+              <h2> Stay productive, wherever you are</h2>
+            </div>
+            <div class="content-text">
+              <p>Never let location be an issue when accessing your files. Fylo has you 
+                covered for all of your file storage needs.</p>
+                <p>Securely share files and folders with friends, family and colleagues for 
+                  live collaboration. No email attachments required!</p>
+            </div>
+            <div class="content-link">
+              <a href="#">See how Fylo works</a>
+              <img src="/images/icon-arrow.svg" alt="arrow icon">
+              <span></span>
+            </div>
+          </div>
+          <div class="card-container">
+            <div class="card">
+              <div class="quotation">
+                <img src="/images/icon-quotes.svg" alt="quotation icon">
+              </div>
+              <div class="card-text">
+                <p>Fylo has improved our team productivity by an order of magnitude. Since 
+                  making the switch our team has become a well-oiled collaboration machine.</p>
+              </div>
+              <div class="card-profle">
+                <div class="testimonial-avatar">
+                  <img src="/images/avatar-testimonial.jpg" alt="Profile Avatar">
+                </div>
+                <div class="testimonial-name">
+                  <p>Kyle Burton <br><span>Founder & CEO, Huddle</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      <div class="access">
+        <div class="access-left">
+          <div class="access-title">
+            <h2>Get early access today</h2>
+          </div>
+          <div class="access-text">
+              <p>It only takes a minute to sign up and our free starter tier is extremely generous. 
+                If you have any questions, our support team would be happy to help you.</p>
+          </div>
+        </div>
+        <div class="access-input">
+        <form onsubmit="return check()" novalidate>
+          <input type="email" id="emailA" name="email" placeholder="email@example.com">
+          <span id="dname" class="emsg"></span>
+          <button name="submit" type="submit" value="Get Started">Get Started For Free</button>
+        </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-logo">
+        <img src="/images/footer-logo.svg" alt="footer logo">
+      </div>
+        <div class="phone-email">
+          <div class="phone">
+            <div>
+              <img src="/images/icon-phone.svg" alt="phone icon">
+            </div>
+            <div>
+              <p>Phone: +1-543-123-4567</p>
+            </div>
+          </div>
+          <div class="email">
+            <div>
+              <img src="/images/icon-email.svg" alt="email icon">
+            </div>
+            <div>
+              <p>example@fylo.com</p>
+            </div>
+            
+          </div>
+        </div>
+      <div class="footer-links">
+        <div class="footer-links-one">
+          <a href="#">About Us</a>
+          <a href="#">Jobs</a>
+          <a href="#">Press</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-links-two">
+          <a href="#">Contact Us</a>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+      <div class="social">
+        <a href="#" title="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" title="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="attribution-div">
+        <p class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="#">KJ</a>.
+        </p>
+      </div>  
+    </footer>
+  </div>
+  <script>
+    function check () {
+    var error = "", field = "";
+  
+    field = document.getElementById("email");
+    error = document.getElementById("cname");
+    if (!field.checkValidity()) {
+      valid = false;
+      field.classList.add("err");
+      error.innerHTML = "Please check your email";
+    } else {
+      field.classList.remove("err");
+      error.innerHTML = "";
+    }
+  
+    field = document.getElementById("emailA");
+    error = document.getElementById("dname");
+    if (!field.checkValidity()) {
+      valid = false;
+      field.classList.add("err");
+      error.innerHTML = "Please check your email";
+    } else {
+      field.classList.remove("err");
+      error.innerHTML = "";
+    }
+    return valid;
+  }
+  </script>
+</body>
+</html>
